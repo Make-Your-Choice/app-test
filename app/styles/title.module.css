@@ -8,6 +8,10 @@
     font-weight: 600;
 }
 
+.title_padding {
+    padding: 0 200px;
+}
+
 @media (min-width: 660px) {
     .title_text_small {
         font-size: 1em;
