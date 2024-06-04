@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styles from "../styles/card.module.css";
+import stylesTitle from "../styles/title.module.css";
+import classNames from 'classnames'
 
 export default function Card({ ...card }) {
     return (
@@ -12,7 +14,7 @@ export default function Card({ ...card }) {
                 height={600}
                 priority
             />
-            <div className={styles.card_text}>
+            <div className={classNames(styles.card_text, stylesTitle.title_text_small)}>
                 {card.title}
                 <div className={styles.card_arrow}></div>
             </div>

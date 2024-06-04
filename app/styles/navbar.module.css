@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     right: 0;
-    /* width: 100%; */
     height: 80px;
     padding: 0;
     justify-content: center;
@@ -55,9 +54,7 @@
 }
 
 .bg_color {
-    /* background-color:#201e44; */
-    background: transparent;
-    /* color: #ffffff */
+    background: #24252F;
 }
 
 .navbar {

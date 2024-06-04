@@ -7,7 +7,6 @@
 }
 
 .card_text_color {
-    /* color: #ffffff; */
     background: linear-gradient(#24252F, #31313F, #242530) no-repeat;
 }
 
@@ -17,9 +16,6 @@
     position: relative;
     top: calc(10px - 250px);
     left: calc(250px - calc(60px * 2));
-    /* left: 130px; */
-    /* top: calc(10px - 250px);
-    left: 150px; */
     z-index: 20;
 }
 
