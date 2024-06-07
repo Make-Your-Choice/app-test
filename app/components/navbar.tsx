@@ -30,16 +30,19 @@ export default function Navbar() {
   return (
     <>
       <div className={stylesNavbar.navbar}>
-        <Image
-          src="/logo.svg"
-          alt="Logo"
-          width={100}
-          height={30}
-          priority
-        />
+        <a href="#" className={stylesNavbar.navbar_logo}>
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={100}
+            height={30}
+            priority
+          />
+        </a>
         <div className={stylesNavbar.navbar_links}>
           {links.map(link => (
-            <p className={stylesNavbar.navbar_item} key={link}>{link}</p>
+            <a href="#" className={stylesMenu.menu_item} key={link}>{link}</a>
+            // <p className={stylesNavbar.navbar_item} key={link}>{link}</p>
           ))}
         </div>
         <button className={stylesNavbar.navbar_image_button}
@@ -60,14 +63,16 @@ export default function Navbar() {
       <div className={menuState ? stylesMenu.menu_opened : stylesMenu.menu_closed}>
         <div className={stylesMenu.menu_links}>
           {links.map(link => (
-            <p className={stylesMenu.menu_item} key={link}>{link}</p>
+            <a href="#" className={stylesMenu.menu_item} key={link}>{link}</a>
+            // <p className={stylesMenu.menu_item} key={link}>{link}</p>
           ))}
         </div>
         <hr></hr>
         <div className={stylesMenu.menu_contacts}>
           <p>Контакты:</p>
           {contacts.map(contact => (
-            <p className={stylesMenu.menu_item} key={contact}>{contact}</p>
+            <a href="#" className={stylesMenu.menu_item} key={contact}>{contact}</a>
+            // <p className={stylesMenu.menu_item} key={contact}>{contact}</p>
           ))}
         </div>
         <hr></hr>

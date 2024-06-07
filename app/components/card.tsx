@@ -16,7 +16,16 @@ export default function Card({ ...card }) {
             />
             <div className={classNames(styles.card_text, stylesTitle.title_text_small)}>
                 {card.title}
-                <div className={styles.card_arrow}></div>
+            </div>
+            <div className={styles.card_arrow_container}>
+                <Image
+                    src="/project-decor.svg"
+                    alt="decor"
+                    className={styles.card_arrow}
+                    width={15}
+                    height={15}
+                    priority
+                />
             </div>
         </div>
     )

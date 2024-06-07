@@ -1,4 +1,14 @@
-.menu_item {}
+.menu_item {
+    color: #ffffff;
+    padding: 15px 0;
+    text-decoration: none;
+    transition: .4s;
+    ;
+}
+
+.menu_item:hover {
+    text-shadow: #ffffff 1px 1px 10px;
+}
 
 .menu_items {
     display: flex;

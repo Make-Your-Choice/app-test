@@ -5,7 +5,7 @@
 .title_text {
     font-size: 2em;
     font-weight: 600;
-    margin: 30px 0;
+    margin: 40px 0;
     composes: title_padding;
 }
 

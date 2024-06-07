@@ -17,7 +17,8 @@ export default function Footer() {
             </div>
             <div className={styles.footer_links}>
                 {contactsNav.map(link => (
-                    <p className={styles.footer_item} key={link}>{link}</p>
+                    <a href="#" className={styles.footer_item} key={link}>{link}</a>
+                    // <p className={styles.footer_item} key={link}>{link}</p>
                 ))}
             </div>
         </div>

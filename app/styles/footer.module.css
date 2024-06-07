@@ -32,6 +32,16 @@
     align-items: flex-start;
 }
 
+.footer_item {
+    color: #ffffff;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.footer_item:hover {
+    text-shadow: #ffffff 1px 1px 10px;
+}
+
 @media (max-width: 1249px) {
 
     .links_row {

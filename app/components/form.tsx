@@ -34,7 +34,6 @@ export default function Form() {
             console.error(err);
             alert("Что-то пошло не так...");
         }
-
     }
 
     return (
@@ -48,6 +47,7 @@ export default function Form() {
                             className={styleForm.form_input}
                             // placeholder="Имя"
                             type="text"
+                            autoComplete="name"
                             {...register("name", {
                                 required: true,
                                 maxLength: 100
@@ -109,19 +109,23 @@ export default function Form() {
                     {errors.message && errors.message.type == "required" &&
                         <p className={styleForm.validation_error}>Введите сообщение!</p>}
                 </div>
-                <div className={styleForm.form_check}>
-                    <label className={styleForm.form_label} htmlFor="check">Согласие на обработку персональных данных</label>
-                    <input
-                        className={styleForm.form_input}
-                        type="checkbox"
-                        {...register("check", {
-                            required: true
-                        })}
-                    ></input>
+                <div className={styleForm.form_item}>
+                    <div className={styleForm.form_check_container}>
+                        <label className={styleForm.form_label} htmlFor="check">Согласие на обработку персональных данных</label>
+                        <input
+                            className={styleForm.form_input}
+                            type="checkbox"
+                            {...register("check", {
+                                required: true
+                            })}
+                        ></input>
+                    </div>
                     {errors.check && errors.check.type == "required" &&
                         <p className={styleForm.validation_error}>Необходимо подтвердить согласие на обработку персональных данных!</p>}
                 </div>
-                <button type="submit" className={styleForm.form_button}>Отправить</button>
+                <div className={styleForm.form_button}>
+                    <button type="submit" className={styleForm.form_button_input}>Отправить</button>
+                </div>
             </form>
         </>
 
