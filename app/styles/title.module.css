@@ -1,19 +1,35 @@
+.title_padding {
+    padding: 0 200px;
+}
+
 .title_text {
     font-size: 2em;
     font-weight: 600;
+    margin: 30px 0;
+    composes: title_padding;
 }
 
 .title_text_small {
     font-size: 1.5em;
     font-weight: 600;
-}
-
-.title_padding {
-    padding: 0 200px;
+    margin: 0;
 }
 
 @media (min-width: 660px) {
     .title_text_small {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 769px) {
+    .title_padding {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width:770px) {
+
+    .title_padding {
+        padding: 0 100px;
     }
 }

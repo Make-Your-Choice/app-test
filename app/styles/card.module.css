@@ -48,7 +48,7 @@
     gap: 30px;
 }
 
-@media (max-width: 659px) {
+@media (max-width: 660px) {
 
     .card_list {
         grid-template-columns: repeat(1, 300px);
@@ -72,7 +72,7 @@
     }
 }
 
-@media (max-width: 900px) and (min-width: 660px) {
+@media (max-width: 900px) and (min-width: 659px) {
 
     .card_list {
         grid-template-columns: repeat(2, 250px);

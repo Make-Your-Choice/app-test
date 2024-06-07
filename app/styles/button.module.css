@@ -1,0 +1,41 @@
+.button_container {
+    padding: 0 200px;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+
+}
+
+.button_item {
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #313341;
+    border: none;
+    box-shadow: #171B2C69 8px 15px 29px 0;
+    outline: 2px solid transparent;
+    transition: .4s;
+}
+
+/* .button_item_clicked {
+    outline: 1px solid #50b9ff;
+} */
+
+.button_item:hover {
+    background-color: #2D76F9;
+}
+
+@media (max-width: 709px) {
+    .button_container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width:710px) {
+
+    .button_container {
+        padding: 0 100px;
+    }
+}

@@ -1,0 +1,35 @@
+.menu_item {}
+
+.menu_items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.menu_links {
+    composes: menu_items;
+}
+
+.menu_contacts {
+    composes: menu_items;
+    color: #ffffff;
+}
+
+.menu_opened {
+    background-color: #24252F;
+    padding: 100px 30px 0 30px;
+    position: fixed;
+    z-index: 950;
+    height: 100%;
+    width: calc(100% - 30px * 2);
+    overflow-y: hidden;
+    display: block;
+    transition: .4s;
+}
+
+.menu_closed {
+    display: none;
+    transition: .4s;
+}

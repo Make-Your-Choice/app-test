@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import styles from "./styles/base.module.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-// import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Test Application",

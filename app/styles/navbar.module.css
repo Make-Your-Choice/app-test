@@ -21,6 +21,18 @@
     display: none;
 }
 
+.navbar_image_button {
+    background-color: transparent;
+    border: none;
+    outline: 2px solid transparent;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.navbar_image_button:hover {
+    outline: 2px solid #2D76F9;
+}
+
 .navbar_links {
     display: flex;
     flex-direction: row;
@@ -31,7 +43,7 @@
     gap: 20px;
 }
 
-@media (max-width: 709px) {
+@media (max-width: 769px) {
     .links_row {
         padding: 0 30px;
         justify-content: space-between;
@@ -46,7 +58,7 @@
     }
 }
 
-@media (max-width: 1199px) and (min-width:710px) {
+@media (max-width: 1199px) and (min-width:770px) {
 
     .links_row {
         padding: 0 100px;
@@ -60,5 +72,5 @@
 .navbar {
     composes:
         layout links_row bg_color;
-    z-index: 900;
+    z-index: 1000;
 }
