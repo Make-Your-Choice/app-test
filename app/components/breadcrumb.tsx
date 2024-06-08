@@ -7,10 +7,12 @@ export type CrumbItem = {
     label: ReactNode
     path: string
 }
+
 export type BreadcrumbProps = {
     items: CrumbItem[]
 }
 
+// хлебные крошки
 const Breadcrumb = ({ items }: BreadcrumbProps) => {
     return (
         <div className={stylesTitle.title_padding}>

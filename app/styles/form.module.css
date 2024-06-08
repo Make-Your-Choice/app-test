@@ -66,7 +66,6 @@ textarea.form_input {
 }
 
 .form_button_input {
-    /* height: 30px; */
     font-size: 1em;
     padding: 10px 50px;
     border-radius: 85px;
@@ -82,15 +81,16 @@ textarea.form_input {
     background-color: #2D76F9;
 }
 
-/* .form_input::-webkit-input-placeholder,
-.form_input:-moz-placeholder,
-.form_input::-moz-placeholder,
-.form_input:-ms-input-placeholder,
-.form_input::-ms-input-placeholder,
-.form_input::placeholder {
-    color: #ffffff;
-    opacity: 1;
-} */
+.form_image {
+    display: none;
+}
+
+@media (max-width: 479px) {
+
+    .form_button_input {
+        width: 100%;
+    }
+}
 
 @media (max-width: 769px) {
     .form_container {
@@ -101,6 +101,10 @@ textarea.form_input {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    .form_image {
+        display: block;
     }
 }
 

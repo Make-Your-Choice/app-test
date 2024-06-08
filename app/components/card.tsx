@@ -3,6 +3,7 @@ import styles from "../styles/card.module.css";
 import stylesTitle from "../styles/title.module.css";
 import classNames from 'classnames'
 
+// карточка с проектом
 export default function Card({ ...card }) {
     return (
         <div className={styles.card}>

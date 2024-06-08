@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "../styles/footer.module.css";
 
+// футер
 export default function Footer() {
     const contactsNav = ['+7 999 123 45 67', 'Агенство', 'Блог', 'hello@cyberia.studio', 'Услуги', 'Контакты', 'ул. Ярных, д. 35, оф. 10', 'Кейсы']
     return (
@@ -18,7 +19,6 @@ export default function Footer() {
             <div className={styles.footer_links}>
                 {contactsNav.map(link => (
                     <a href="#" className={styles.footer_item} key={link}>{link}</a>
-                    // <p className={styles.footer_item} key={link}>{link}</p>
                 ))}
             </div>
         </div>

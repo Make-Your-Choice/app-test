@@ -10,15 +10,20 @@ import styleBase from "../styles/base.module.css";
 import classNames from 'classnames';
 
 export default function FetchData() {
+
+    // карточки и их состояние
     const [cards, setCards] = useState(null)
     const [isLoadingCards, setLoadingCards] = useState(true)
 
+    // категории и их состояние
     const [categories, setCategories] = useState(null)
     const [isLoadingCategories, setLoadingCategories] = useState(true)
 
+    // фильтр и отфильтрованные данные
     const [filterValue, setFilterValue] = useState<Number>(-1);
     const [filteredData, setfilteredData] = useState(null)
 
+    // подгрузка данных проектов
     useEffect(() => {
         fetch("https://api.test.cyberia.studio/api/v1/projects")
             .then((res) => res.json())
@@ -30,6 +35,7 @@ export default function FetchData() {
             .catch((e) => console.error(e))
     }, [])
 
+    // подгрузка данных категорий проектов
     useEffect(() => {
         fetch("https://api.test.cyberia.studio/api/v1/project-categories")
             .then((res) => res.json())
@@ -40,25 +46,9 @@ export default function FetchData() {
             .catch((e) => console.error(e))
     }, [])
 
-
-
-    //--------------все бы хорошо, но не работает-----------------------------------
-    // let filteredData = cards.filter((item) => {
-    //     return {
-    //         ...item,
-    //         categories: item.categories.filter((subItem) =>
-    //             subItem.name === filterValue)
-    //     }
-    // const filteredChilds = datum.children.filter((child) => child.title.toLowerCase().includes(searchString.toLowerCase()));
-    // return filteredChilds.length > 0;
-    // });
-    // ----------------------------------------------------------
-
-
-
+    // фильтрация проектов в зависимости от заданного фильтра
     const handleFilterChange = (e: Event, categoryId: Number) => {
         if (categoryId !== filterValue || categoryId === -1) {
-            // e.currentTarget.classList.add(styleButton.button_item_clicked);
             console.log(categoryId);
             setFilterValue(categoryId);
 
@@ -69,37 +59,18 @@ export default function FetchData() {
             }))
             console.log(filteredData)
         } else {
-            // e.currentTarget.classList.remove(styleButton.button_item_clicked);
             setFilterValue(-1)
             setfilteredData(cards)
         }
-
-
-
-
-        // ----------как их блин сбросить нормально
-        // console.log(categoryId);
-
-        // setfilteredData(cards.filter((item) => {
-        //     const subItems = item.categories.filter((subItem) =>
-        //         parseInt(subItem.id) === categoryId);
-        //     return subItems.length > 0;
-        // }))
-        // setFilterValue(categoryId);
-        // console.log(filterValue);
-        // console.log(filteredData)
-
     };
 
-    // const filteredData = !filterValue ? cards : cards.items.filter(item =>
-    //     item.categories.filter((category: string) =>
-    //         category.name.toLowerCase().includes(filterValue.toLowerCase())))
-
+    // загрузка данных
     if (isLoadingCards || isLoadingCategories)
         return <p className={styleTitle.title_padding}>Загрузка...</p>
     if (!cards || !categories)
         return <p className={styleTitle.title_padding}>Нет данных для отображения</p>
 
+    // фильтры и карточки с проектами
     return (
         <>
             <p className={styleTitle.title_text}>Кейсы</p>

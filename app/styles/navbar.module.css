@@ -43,13 +43,23 @@
     gap: 20px;
 }
 
+.bg_color {
+    background: #24252F;
+}
+
+.navbar {
+    composes:
+        layout links_row bg_color;
+    z-index: 1000;
+}
+
 @media (max-width: 769px) {
     .links_row {
         padding: 0 30px;
         justify-content: space-between;
     }
 
-    .navbar_item {
+    .navbar_links {
         display: none;
     }
 
@@ -63,14 +73,4 @@
     .links_row {
         padding: 0 100px;
     }
-}
-
-.bg_color {
-    background: #24252F;
-}
-
-.navbar {
-    composes:
-        layout links_row bg_color;
-    z-index: 1000;
 }

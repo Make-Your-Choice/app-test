@@ -1,9 +1,11 @@
 'use client';
 
+import Image from "next/image";
 import styleForm from "../styles/form.module.css";
 import styleTitle from "../styles/title.module.css"
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
+// типы данных формы
 interface IFormInput {
     name: string,
     email: string,
@@ -12,13 +14,11 @@ interface IFormInput {
     check: boolean
 }
 
+// форма обратной связи
 export default function Form() {
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>()
-    const onSubmit: SubmitHandler<IFormInput> = (data) => {
-        console.log(data);
-        console.log(errors);
-    }
 
+    // отправка данных формы
     async function submitForm(data: object) {
         try {
             const response = await fetch("https://api.test.cyberia.studio/api/v1/feedbacks", {
@@ -38,15 +38,28 @@ export default function Form() {
 
     return (
         <>
-            <p className={styleTitle.title_text}>Расскажите о вашем проекте:</p>
+            <p className={styleTitle.title_text}>
+                <span className={styleTitle.title_container}>
+                    <Image
+                        src="/form-image.svg"
+                        alt="Form image"
+                        className={styleForm.form_image}
+                        width={80}
+                        height={80}
+                        priority
+                    />
+                    <span>Расскажите о вашем проекте:</span>
+                </span>
+
+            </p>
             <form onSubmit={handleSubmit(submitForm)} className={styleForm.form_container}>
                 <div className={styleForm.form_container_inner}>
                     <div className={styleForm.form_item}>
-                        <label className={styleForm.form_label} htmlFor="name">Имя</label>
+                        <label className={styleForm.form_label} htmlFor="name_input">Имя</label>
                         <input
                             className={styleForm.form_input}
-                            // placeholder="Имя"
                             type="text"
+                            id="name_input"
                             autoComplete="name"
                             {...register("name", {
                                 required: true,
@@ -59,11 +72,11 @@ export default function Form() {
                             <p className={styleForm.validation_error}>Имя слишком длинное!</p>}
                     </div>
                     <div className={styleForm.form_item}>
-                        <label className={styleForm.form_label} htmlFor="email">Email</label>
+                        <label className={styleForm.form_label} htmlFor="email_input">Email</label>
                         <input
                             className={styleForm.form_input}
-                            // placeholder="Email"
                             type="email"
+                            id="email_input"
                             autoComplete="email"
                             required={true}
                             {...register("email", {
@@ -77,11 +90,11 @@ export default function Form() {
                             <p className={styleForm.validation_error}>Введен некорректный email!</p>}
                     </div>
                     <div className={styleForm.form_item}>
-                        <label className={styleForm.form_label} htmlFor="tel">Телефон</label>
+                        <label className={styleForm.form_label} htmlFor="tel_input">Телефон</label>
                         <input
                             className={styleForm.form_input}
-                            // placeholder="Телефон"
                             type="tel"
+                            id="tel_input"
                             autoComplete="tel"
                             {...register("tel", {
                                 required: true,
@@ -98,10 +111,10 @@ export default function Form() {
                     </div>
                 </div>
                 <div className={styleForm.form_item}>
-                    <label className={styleForm.form_label} htmlFor="message">Сообщение</label>
+                    <label className={styleForm.form_label} htmlFor="message_input">Сообщение</label>
                     <textarea
+                        id="message_input"
                         className={styleForm.form_input}
-                        // placeholder="Сообщение"
                         {...register("message", {
                             required: true
                         })}
@@ -111,10 +124,11 @@ export default function Form() {
                 </div>
                 <div className={styleForm.form_item}>
                     <div className={styleForm.form_check_container}>
-                        <label className={styleForm.form_label} htmlFor="check">Согласие на обработку персональных данных</label>
+                        <label className={styleForm.form_label} htmlFor="check_input">Согласие на обработку персональных данных</label>
                         <input
                             className={styleForm.form_input}
                             type="checkbox"
+                            id="check_input"
                             {...register("check", {
                                 required: true
                             })}
@@ -128,6 +142,5 @@ export default function Form() {
                 </div>
             </form>
         </>
-
     )
 }
